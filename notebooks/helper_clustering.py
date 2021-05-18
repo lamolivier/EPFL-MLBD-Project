@@ -16,7 +16,7 @@ from scipy.cluster.hierarchy import dendrogram
 # ----- K-Means clustering -----
 
         
-def get_heuristics_kmeans(X, n_clusters_list = range(2,4), seed=10):
+def get_heuristics_kmeans(X, n_clusters_list = range(2,4), plot=True, seed=10):
     """
     Calculates heuristics for optimal number of clusters with K-Means 
     
@@ -33,12 +33,15 @@ def get_heuristics_kmeans(X, n_clusters_list = range(2,4), seed=10):
         kmeans = KMeans(n_clusters=n, random_state=seed)
         y_pred = kmeans.fit_predict(X)
 
+        print('    Computing silhouette with {} cluster'.format(n))
         silhouette = silhouette_score(X, y_pred)
         silhouette_list.append(silhouette)
 
+        print('    Computing distortion with {} cluster'.format(n))
         distortion = kmeans.inertia_
         distortion_list.append(distortion)
 
+        print('    Computing bic with {} cluster'.format(n))
         bic = compute_bic(kmeans, X)
         bic_list.append(bic)
         
@@ -46,7 +49,8 @@ def get_heuristics_kmeans(X, n_clusters_list = range(2,4), seed=10):
                          'Distortion': distortion_list,
                          'Silhouette': silhouette_list}
     
-    plot_metrics(n_clusters_list, metric_dictionary)
+    if plot:
+        plot_metrics(n_clusters_list, metric_dictionary)
     
     return metric_dictionary
 
