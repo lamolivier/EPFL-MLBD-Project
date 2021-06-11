@@ -39,7 +39,7 @@ The following directory contrains different text documents, code and data files.
 
 #### Documents:
 
-report.pdf
+[report.pdf](https://github.com/olivierlam97/EPFL-MLBD-Project/blob/main/report.pdf)
 
 #### Code:
 
