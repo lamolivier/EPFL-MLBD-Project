@@ -1,5 +1,5 @@
 
-# Machine Learning for Behavioural Data Project
+# Machine Learning for Behavioral Data Project
 
 
 
@@ -56,7 +56,7 @@ report.pdf
 - `./notebooks/dim_reduction.ipynb`: notebook containing the steps to perform a dimensionality reduction on the artist and user embeddings
 - `./notebooks/word2vect_embeddings.ipynb`: notebook containing the alternative approach of computing the embeddings at the user and artist level
 - `./notebooks/embedding_evaluation.ipynb`: notebook containing the evaluation methods for all the embeddings
-- `./notebooks/clustering_analysis.ipynb`: notebook containing the clusterings methods performed on the embeddings,
+- `./notebooks/clustering_analysis.ipynb`: notebook containing the clusterings methods performed on the embeddings
 - `./notebooks/predict_list_of_artists.ipynb`: notebook containing the methods used for predicting the optimal list of artists given a list of users. 
 
 
